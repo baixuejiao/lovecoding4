@@ -1,0 +1,124 @@
+<!-- html注释格式 -->
+<!-- 声明文档类型 表示使用哪个版本的html 最新版本html5 -->
+<!DOCTYPE html>
+<!-- 根元素 所有内容必须写在html标签内部 -->
+<html lang="en">
+<!-- head 头部标签 会写一些页面的配置信息  -->
+<head>
+  <!-- 设置页面的编码格式 常见有gbk gb2312 UTF-8 -->
+  <meta charset="UTF-8">
+  <!-- 响应式设计的配置 -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- 搜索引擎使用 根据设置的关键字可以搜索到当前网页 -->
+  <meta name="keywords" content="商城,网上购物,网购,进口食品,美容护理,母婴玩具,家用电器,手机数码,家居生活,服饰内衣,营养保健,钟表珠宝,饰品箱包,汽车生活,图书音像,礼品卡">
+  <!-- 搜索引擎使用 网站的介绍信息  -->
+  <meta name="description" content="天猫，中国线上购物的地标网站，亚洲超大的综合性购物平台，拥有10万多品牌商家。每日发布大量国内外商品！正品网购，上天猫！天猫千万大牌正品,品类全，一站购，支付安全，退换无忧！理想生活上天猫!">
+  <!-- 设置页面标题 -->
+  <title>我是页面标题</title>
+</head>
+<body style="height: 3000px;padding: 0 50px;">
+  hello world!
+  <!-- h1~h6 标题标签  -->
+  <h1>标题1</h1>
+  <h2>标题2</h2>
+  <h3>标题3</h3>
+  <h4>标题4</h4>
+  <h5>标题5</h5>
+  <h6>标题6</h6>
+
+  <!-- 段落标签 -->
+  <!-- br(单标签) 换行标签  -->
+  <!-- i 斜体 -->
+  <p><i>天猫</i>，中国线上购物的地标网站，<br/>亚洲超大的综合性购物平台，拥有10万多品牌商家。每日发布大量国内外商品！正品网购，上天猫！天猫千万大牌正品,品类全，一站购，支付安全，退换无忧！理想生活上天猫!</p>
+  <!-- strong 加粗 -->
+  <p><strong>天猫</strong>，中国线上购物的地标网站，亚洲超大的综合性购物平台，拥有10万多品牌商家。每日发布大量国内外商品！正品网购，上天猫！天猫千万大牌正品,品类全，一站购，支付安全，退换无忧！理想生活上天猫!</p>
+
+  <!-- 图片
+        src: 图片地址
+        alt: 图片加载错误 或 无法加载的时候 给用户的文字提示
+      图片格式：jpg/jpeg png gif img
+  -->
+  <img src="./img.jpg" alt="111">
+  <img src="https://img.alicdn.com/tfs/TB1MaLKRXXXXXaWXFXXXXXXXXXX-480-260.png" alt="页面logo">
+
+  <!-- a 超链接 
+      href:跳转地址
+      target="_blank" 在新的标签页打开页面
+  -->
+  <a href="http://www.baidu.com">百度</a>
+  <a href="http://www.baidu.com" target="_blank">百度</a>
+
+  <!-- 无序列表 ul + li -->
+  <ul>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+  </ul>
+
+  <!-- 有序列表 ol + li -->
+  <ol>
+    <li>列表1</li>
+    <li>列表2</li>
+    <li>列表3</li>
+  </ol>
+
+  <!-- 
+    form 表单
+      actvion:表单提交的地址
+  -->
+  <form action="http://www.baidu.com">
+
+    <!-- input 文本框
+          type 属性
+                text 普通文本框
+                password 密码框
+                radio 单选框
+                checkbox 复选框
+                file 选择文件
+                submit 提交按钮
+    -->
+
+    姓名：<input type="text" name="username"> <br/>
+    密码：<input type="password" name="mima"> <br/>
+    <!-- name 当多个文本框属于同一个填写项 设置name属性的值相同 name当前字段的名字-->
+    性别：<input type="radio" name="sex"> 男 <input type="radio" name="sex"> 女 <br/>
+    <!-- 当前页面的id必须唯一
+        label 标签与 input 标签相关联
+        label 标签的for属性的值 要与input标签 的id值相同
+    -->
+    性别：<input type="radio" name="sex" id="boy"> <label for="boy">男</label> <input type="radio" name="sex" id="girl"> <label for="girl">女</label>  <br/>
+    你最喜欢的水果：<input type="checkbox" name="fruit"> 苹果 <input type="checkbox" name="fruit"> 香蕉 <input type="checkbox" name="fruit"> 西瓜 <br/>
+    上传头像：<input type="file"> <br/>
+
+    <!-- 下拉列表 
+        select + option
+        option 下拉列表的每一项
+    -->
+    学校: 
+    <select>
+      <option value="1">黑大</option>
+      <option value="2">理工</option>
+      <option value="3">哈工大</option>
+      <option value="4">清华</option>
+      <option value="5">北大</option>
+    </select>
+    <br/>
+
+    <!-- 
+      textarea 文本域（多行文本框）
+        cols 列
+        rows 行
+     -->
+    其他原因：<textarea cols="30" rows="3"></textarea>
+    
+    <!-- 按钮 -->
+    <button>登陆</button>
+    <!-- 提交按钮 -->
+    <input type="submit">
+  </form>
+
+
+  
+
+</body>
+</html>
