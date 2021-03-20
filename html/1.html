@@ -17,6 +17,7 @@
   <title>我是页面标题</title>
 </head>
 <body style="height: 3000px;padding: 0 50px;">
+  <!-- 在书写选择标签时一定要选择对应含义的标签 -->
   hello world!
   <!-- h1~h6 标题标签  -->
   <h1>标题1</h1>
@@ -117,6 +118,59 @@
     <input type="submit">
   </form>
 
+  <!-- 
+      table表格
+      tr 行
+      td 单元格
+  -->
+  <table border="1">
+    <tr>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+  </table>
+
+  <!-- div/span 没有实际的含义 通常用作布局 -->
+  <div>div1</div>
+  <div>div2</div>
+  <span>span1</span>
+  <span>span2</span>
+
+  <!-- 嵌套 -->
+  <div>
+    <p>12345</p>
+    <span></span>
+    <a href=""></a>
+    <img src="" alt="">
+  </div>
+
+  <!-- 此写法是错误的 -->
+  <a href="">
+    <a href=""></a>
+  </a>
+
+  <!-- 
+    行级元素
+      多个元素占一行 
+      行级元素只可以嵌套行级元素（a标签不能嵌套a标签）
+      常见的标签：span a
+
+    块级元素
+      单个元素占一行
+      块级元素可以嵌套块级元素和行级元素（h1~h6 p 除外）
+      常见的标签：h1~h6 p div ul ol li
+    
+      行级块元素
+      既有行级元素特性又有块级元素特性
+      多个元素占一行
+      常见的标签：img
+
+    
+   -->
 
   
 
