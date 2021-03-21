@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      /* display: inline; */
+      width: 200px;
+      height: 200px;
+      background: pink;
+    }
+
+    span{
+      /* 
+        设置元素的展示方式（元素本身的性质没有改变）
+          block 块级元素
+          inline 行级元素
+          inline-block 行级块元素
+      */
+      /* display: inline-block; */
+      float: left;
+      width: 200px;
+      height: 200px;
+      background: aqua;
+    }
+
+    img{
+      width: 100px;
+    }
+  </style>
+</head>
+<body>
+  <!-- 
+      块级元素
+        单个元素占一行
+        可以设置宽高
+      行级元素
+        多个元素占一行
+        不可以设置宽高
+      行级块元素
+        既有行级元素特性又有块级元素特性
+        多个元素占一行
+        可以设置宽高
+   -->
+  <div>div</div>
+  <span>span</span>
+  <img src="./logo.png" alt="">
+  <img src="./logo.png" alt="">
+</body>
+</html>

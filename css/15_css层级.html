@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #wrapper1{
+      width: 200px;
+      height: 200px;
+      background: pink;
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 2;
+    }
+    #wrapper2{
+      width: 200px;
+      height: 200px;
+      background: aqua;
+      position: absolute;
+      left: 40px;
+      top: 40px;
+      /* 
+        z-index 改变已定位元素的层级
+      */
+      z-index: 1;
+    }
+    #wrapper3{
+      width: 200px;
+      height: 200px;
+      background: blanchedalmond;
+      position: absolute;
+      top: 60px;
+      left: 60px;
+      z-index: 1;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="wrapper1"></div>
+  <div id="wrapper2"></div>
+  <div id="wrapper3"></div>
+</body>
+</html>

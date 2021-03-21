@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 100px;
+      height: 100px;
+       /* 1 */
+      background: red;
+    }
+    #container{
+      font-size: 20px;
+      /* 100 */
+      /* background: blanchedalmond; */
+    }
+    .wrapper{
+      color: orange;
+      /* 10 */
+      background: aqua;
+    }
+
+    /* 1 */
+    p{
+      color: orange !important;
+    }
+
+    /* 11 */
+    .list>p{
+      color: orchid;
+    }
+
+    /* 110 */
+    .list > #number{
+      color: palegreen;
+    }
+    /* 21 */
+    ul > .list > .text {
+      color: cornsilk;
+    }
+    /* 101 */
+    #wrapper p {
+      color: crimson;
+    }
+    /* 110 */
+    #list1 .text{
+      color: black;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 
+      选择器优先级权重
+      !important 最高的
+      style 内联样式  1000
+      id 100
+      class 10
+      伪类 10
+      标签 1
+      伪元素 1
+
+
+      针对同一元素
+        不同选择器内的不同属性 合并展示
+        不同选择器内的相同属性 按照权重大小显示 权重相同的情况下后写的会把前面的覆盖
+   -->
+  <div id="container" class="wrapper" >div1</div>
+
+  <ul id="wrapper">
+    <li class="list" id="list1">
+      <p class="text" id="number">1234567890</p>
+    </li>
+  </ul>
+</body>
+</html>
