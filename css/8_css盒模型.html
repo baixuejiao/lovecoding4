@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      /* 
+        margin 外边距
+          只设置一个值 外边距上下左右都是同一个值
+          设置两个值 a b 上外边距和下外边距都是a 左外边距和右外边距都是b
+          设置三个值 a b c 上外边距是a 左外边距和右外边距是b 下外边距是c
+          设置四个值 上右下左(顺时针)
+      */
+      margin: 50px 100px 150px 200px;
+      /* 
+        padding 内边距
+          只设置一个值 内边距上下左右都是同一个值
+          设置两个值 a b 上内边距和下内边距都是a 左内边距和右内边距都是b
+          设置三个值 a b c 上内边距是a 左内边距和右内边距是b 下内边距是c
+          设置四个值 上右下左(顺时针)
+      */
+      padding: 30px 50px;
+      font-size: 28px;
+      /* 
+        border 边框
+          第一个值 边框的大小
+          第二个值 边框的类型
+                  solid 实线
+                  dashed 虚线
+                  dotted 点状
+          第三个值 边框的颜色
+        border-top
+        border-right
+        border-bottom
+        border-left
+      */
+      /* border: 10px dotted blue; */
+      border-bottom: 10px solid black;
+      border-top: 10px solid green;
+      border-left: 10px solid pink;
+      border-right: 10px solid yellow;
+      background: red;
+    }
+
+    /* 
+      元素实际看到的大小
+        元素的宽 = width + padding-left + padding-right + border-left + border-right
+        元素的高 = height + padding-top + padding-bottom + border-top + border-bottom
+    */
+
+  </style>
+</head>
+<body>
+  <div>div</div>
+</body>
+</html>

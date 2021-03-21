@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* 伪类选择器 */
+
+    /* 未被访问的链接 */
+    a:link {
+      color: red;
+    }
+
+    /* 已被访问的链接 */
+    a:visited {
+      color: green;
+    }
+
+    /* 将鼠标悬停在链接上 */
+    a:hover {
+      color: hotpink;
+    }
+
+    /* 被选择的链接 */
+    a:active {
+      color: blue;
+    }
+
+    p:hover{
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- 
+    如果要给a标签设置多个状态必须按照以下顺序书写
+    a:hover 必须 a:link 和 a:visited 之后
+    a:active 必须在 a:hover 之后
+   -->
+  <a href="http://www.udache.com">udache</a>
+  <p>123456789</p>
+</body>
+</html>
