@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 500px;
+      height: 500px;
+      /* 背景图片 url(图片路径) */
+      /* background-image: url('./logo.png'); */
+      /* 
+        背景图片是否重复
+          no-repeat 不重复
+          repeat-x x轴方向重复
+          repeat-y y轴方向重复
+      */
+      /* background-repeat: no-repeat; */
+      /* 
+          背景图片的位置
+          1.center top left right bottom
+          2.可以写具体的像素 
+            设置两个值的情况  第一个值对应x轴的位置 第二个值对应y轴的位置
+            设置一个值的情况 这个值是x轴的位置 y轴默认center
+      */
+      /* background-position: top right;
+      background-color: red; */
+
+      /* background 简写 */
+      background: pink url('./logo.png') no-repeat center;
+    }
+
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

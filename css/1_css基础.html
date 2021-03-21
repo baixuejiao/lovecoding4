@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- 
+    内部样式:写在head标签内部的style标签里
+   -->
+  <style>
+    /* px 像素  */
+    div{
+      /* 
+        width: 元素的宽
+        height: 元素的高
+        background: 背景
+      */
+      width: 200px;
+      height: 200px;
+      background: red;
+    }
+  </style>
+
+  <!-- 外部样式 -->
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+  <!-- <div>div1</div> -->
+  <!-- 写在标签上的是内联样式 -->
+  <!-- <div style="width: 100px;height: 100px;background: blue;">div2</div> -->
+  <div>div3</div>
+
+
+  <!-- 
+      插入css的三种方式
+      1.内部样式 写在 head标签里的 style标签内部
+      2.内联样式 直接给标签加style属性
+      3.外部样式 在head里通过link标签引入css文件
+   -->
+</body>
+</html>

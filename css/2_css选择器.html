@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    /* id选择器 #加上id的值 */
+    #container{
+      width: 100px;
+      height: 100px;
+      background: palegoldenrod;
+    }
+    /* class选择器 .加上class的值  */
+    .wrapper{
+      width: 200px;
+      height: 200px;
+      background: paleturquoise;
+    }
+
+    /* 标签选择器 直接写标签名 */
+    /* div{
+      width: 100px;
+      height: 100px;
+      background: palevioletred;
+    } */
+
+    /* li {
+      color: red;
+    } */
+    /* 子代选择器 > (父亲和儿子的关系只能给直接的子代-儿子加样式)  */
+    /* ul > li {
+      color: blue;
+    } */
+
+    #list > li {
+      color: blue;
+    }
+
+    /* #content > .text {
+      color: red;
+    } */
+
+    /* #content > p {
+      color: green;
+    } */
+
+    /* 后代选择器 可以给儿子 孙子。。。 只要是符合要求的后代都可以加上样式 */
+    /* #content p {
+      color: hotpink;
+    } */
+/* 
+    .text {
+      color: red;
+    }
+    .link {
+      color: red;
+    } */
+
+    /* 分组选择器 , 逗号前后可以用三种基础的选择器  */
+    .text , .link {
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- id 当前页面内 id的值必须唯一 不允许重复  -->
+  <!-- <div id="container">div1</div> -->
+
+  <!-- class的值可以重复 -->
+  <!-- <div class="wrapper">div2</div>
+  <div class="wrapper">div3</div> -->
+
+  <div>div4</div>
+
+  <ul id="list">
+    <li>
+      列表1
+    </li>
+  </ul>
+
+  <div id="content">
+    <p class="text">p1:1234567</p>
+    <div>
+      <p>p2:34567890</p>
+    </div>
+  </div>
+
+  <div>
+    <a class="link" href="">百度</a>
+  </div>
+  
+  <!-- 
+    选择器(用各种方式来找到你想要的那个元素) 
+    （id名和class名一定要有实际含义）
+    id选择器 #（id的值）
+    class选择器 .(class的值)
+    标签选择器 标签名
+    子代选择器 >
+    后代选择器 （空格）
+    分组选择器 ,
+  -->
+
+</body>
+</html>
