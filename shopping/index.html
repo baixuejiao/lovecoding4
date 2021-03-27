@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/index.css">
 </head>
 
 <body>
@@ -34,6 +35,35 @@
           </a>
         </li>
       </ul>
+    </div>
+  </div>
+
+  <!-- 搜索区域 -->
+  <div id="search">
+    <div class="wrapper">
+      <img id="search-logo" src="./images/logo.jpg" alt="">
+      <div id="search-container">
+        <div id="search-content">
+          <!-- 
+            行级块元素回车换行导致的缝隙
+              1.删除回车换行（不建议使用）
+              2.给父元素设置font-size:0
+              3.设置浮动/设置display:block
+           -->
+          <input type="text" placeholder="618活动">
+          <button>搜索</button>
+        </div>
+        <p id="search-type">
+          <a href="">时尚女鞋</a>
+          <a href="">简易家具</a>
+          <a href="">仙女公主裙</a>
+          <a href="">BF风裤子</a>
+        </p>
+      </div>
+      <div id="search-bag">
+        <img src="./images/bag.png" alt="">
+        <span>购物车<span id="search-bag-num">0</span>物品</span>
+      </div>
     </div>
   </div>
 </body>

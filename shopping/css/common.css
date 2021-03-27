@@ -57,6 +57,7 @@ body {
 }
 #nav-list > li {
   float: left;
+  padding: 0 7px;
 }
 #nav-list a {
   padding: 0 10px;
