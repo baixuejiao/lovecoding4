@@ -64,3 +64,23 @@
   margin: 0 2px;
   color: #ff4200;
 }
+
+/* 分站入口  */
+.type-list{
+  float: left;
+  height: 50px;
+  margin-left: 90px;
+  line-height: 50px;
+  position: relative;
+}
+.type-list-index{
+  margin-left: 304px;
+}
+.type-list > a {
+  color: #606060;
+}
+.type-list > img {
+  position: absolute;
+  top: -8px;
+  left: 35px;
+}
