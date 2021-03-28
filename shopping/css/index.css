@@ -141,7 +141,8 @@
   border-bottom: 1px solid #ffffff;
 }
 .menu-type > a {
-  padding: 0 5px;
+  float: left;
+  padding: 0 3px;
   border-right: 1px solid #ffffff;
   color: #ffffff;
 } 
