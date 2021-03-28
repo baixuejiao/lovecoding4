@@ -13,10 +13,14 @@
       width: 200px;
       height: 200px;
       /* 左右外边距自适应 */
-      margin: 10px auto 0;
+      /* margin: 10px auto 0; */
       text-align: center;
       line-height: 200px;
       background: red;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -100px;
     }
   </style>
 </head>
@@ -26,7 +30,8 @@
   </div>
   <!-- 
       块级元素左右居中展示
-        设置左右外边距为auto margin: 0 auto;
+        1.设置左右外边距为auto margin: 0 auto;
+        2.设置绝对定位 left：50% marign-left：-宽度/2
       行级元素左右居中展示
         给父元素设置文本水平居中 text-align: center;
    -->
