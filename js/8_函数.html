@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var height = 5;
+    var width = 10;
+    var area = width * height / 2;
+
+    /* 
+      通过function关键字定义
+      function 函数名
+    */
+    // 函数声明的方式 声明前后都可以调用方法
+    function fun() {
+      console.log('hello')
+    }
+    // 调用函数
+    fun();
+
+    // 函数表达式的方式 只能在函数定义之后调用
+    var fn = function(){
+      console.log('hi~');
+    }
+    // 调用表函数
+    fn();
+
+    // 形参
+    function getArea(width, height) {
+      // console.log(width*height/2)
+      return width*height/2 // 执行之后直接返回内容，后面的语句不会执行
+      console.log('hahahha')
+    }
+    // 实参
+    var ccc = getArea(8,2);
+    console.log(ccc);
+
+
+  </script>
+</body>
+</html>

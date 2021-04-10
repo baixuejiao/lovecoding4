@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = 10;
+    var b = 3;
+
+    // 取余 %
+    console.log(a % b); // 1
+
+    //  自增自减运算符
+    var c = 1;
+    // c++ 先输出再进行+1运算
+    console.log(c++); // 1
+
+    var d = 1;
+    // ++d 先进行+1运算 再输出
+    console.log(++d); //2
+
+    var e = 1;
+    console.log(e--); // 1
+
+    var m = 9;
+    var n = 5;
+    console.log(m <= n);
+    // console.log(n<x<m) ->错误写法
+
+    // 关系运算符 >、<、>=、<=
+    console.log(m != n);
+    var i = '5'; // 5
+    var j = 5;
+    console.log(i*1);
+    console.log(i == j); // true
+    console.log(i === j); // false
+    /*
+      判断是否相等
+      == 判断值是否相等
+      === 判断值和类型是否相等
+      != 判断值是否不相等
+      !== 判断值和类型是否不相等
+    */
+    /*
+      (小技巧)把string类型转换成number类型
+      i*1
+      i=+i
+    */
+
+    /*
+      逻辑运算
+      && || !
+    */
+    var aa = 1;
+    var bb = 3;
+    var cc = 2;
+    console.log(cc > aa && cc < bb); // true
+    console.log(cc > aa || cc < bb) // true
+    console.log(!cc); // false
+  </script>
+</body>
+</html>

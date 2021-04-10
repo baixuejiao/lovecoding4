@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var a = 1; // number
+    var b = 2; // number
+    var c = a + b;
+    console.log(c);
+
+    var d = 'hello'; // string
+    var e = 'world'; // string
+    var f = d + e;
+    console.log(f);
+
+    var g = d + a;
+    console.log(g); // 'hello1' string 
+    
+    var h = true; //  true -> 1 , false -> 0
+    console.log(h+a);
+
+    var i = '1';
+    console.log(i+a); // string '11'
+
+    /*
+      加法运算
+        普通number类型的就正常计算
+        有string类型的就会转换成字符换 =》字符串拼接（toString）
+        boolean类型转换成number类型计算 true -> 1 false -> 0
+    */
+
+    var aa = 1;
+    var bb = 2;
+    console.log(aa-bb); // number
+    var cc = 'hello';
+    var dd = 'world';
+    console.log(cc-dd); // NaN -> not a number
+    var ee = '9';
+    console.log(ee-aa); // 8 number
+    var ff = true;
+    console.log(ff-aa); // 0 number
+
+    /*
+      减法计算
+        number类型正常计算
+        非number类型会进行数据类型转换Number()
+          如果能转换成number类型 就正常计算
+          如果转换完的结果是NaN 最终结果就是NaN
+    */
+
+    var aaa = 1;
+    var bbb = 2;
+    console.log(aaa * bbb);
+    var ccc = 'hello';
+    console.log(ccc*aaa); // NaN 
+    var ddd = false;
+    console.log(bbb*ddd); // 0 
+
+    /*
+      乘法计算
+        number类型正常计算
+        非number类型会进行数据类型转换Number()
+          如果能转换成number类型 就正常计算
+          如果转换完的结果是NaN 最终结果就是NaN
+    */
+
+    var m = 'hello';
+    var n = 1;
+    console.log(m/n); // NaN
+    var o = false;
+    console.log(n/o); // Infinity 无限大
+
+    /*
+      除法计算
+        number类型正常计算
+        非number类型会进行数据类型转换Number()
+          如果能转换成number类型 就正常计算 Infinity 无限大
+          如果转换完的结果是NaN 最终结果就是NaN
+    */
+  </script>
+</body>
+</html>

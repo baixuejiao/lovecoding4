@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    /*
+      全局作用域
+        定义在全局的里的变量是全局变量可以在全局和局部都可以调用
+      局部作用域 函数内部形成局部作用域
+        定义在函数内部的变量是局部变量 只能在局部调用
+    */
+
+    // var a = 1;
+    // function fun() {
+    //   console.log(a);
+    //   var b = 2;
+    // }
+    // fun();
+    // console.log(a);
+
+    var a = 1; // 全局变量
+    function fun1() {
+      console.log(a); // undefined
+      var c = 2;
+      console.log(a); // 2 
+    }
+    fun1();
+    console.log(a); // 1
+
+
+  </script>
+</body>
+</html>
