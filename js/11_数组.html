@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 定义一个空数组
+    var arr = [];
+    console.log(arr);
+    // Array 是js数组对象
+    var arr1 = new Array(); //创建一个空数组 等价于var arr = [];
+    console.log(arr1);
+
+    // 定一个数组并赋值
+    var a1 = [1,2,3];
+    console.log(a1);
+
+    /*
+      new Array(n) 定义了一个长度为n的空数组
+      new Array(x,y,z) 定义了一个数组并且进行了初始化赋值[x,y,z]
+    */
+    var a2 = new Array(2,3,4);
+    console.log(a2); // [2,3,4]
+    var a3 = new Array(4);
+    console.log(a3); // 长度为4的空数组
+
+    var b1 = [1,2,3];
+    console.log(b1[0]); // 1
+    console.log(b1[5]); // undefined
+
+    var b2 = [1,'hello',true, undefined, null];
+    console.log(b2);
+
+    // length 数组的长度
+    console.log(b2.length);
+
+    /*
+      concat 拼接两个或多数组
+      返回一个新的数组
+      原数组不会改变
+    */
+    var c1 = [1,2];
+    var c2 = [2,3];
+    var c3 = c1.concat(c2); 
+    console.log('c1:',c1);
+    console.log('c2:',c2);
+    console.log('c3:',c3); //[1,2,2,3]
+
+    /*
+      push 向数组的末尾添加一个或多个元素
+      返回的是数组的长度
+      原数组会改变
+    */
+    var len = c3.push(8,9);
+    console.log('len:', len);
+    console.log('c3:',c3); // [1,2,2,3,8,9]
+
+    /*
+      pop在数组的末尾删除一个元素
+      返回被删除的元素
+      原数组会改变
+    */
+    var c4 = c3.pop();
+    console.log('c3:',c3); // [1,2,2,3,8]
+    console.log('c4:',c4);
+
+    /*
+      unshift在数组的开头插入一个或多个元素
+      返回数组的长度
+      原数组会改变
+    */
+    var c5 = c3.unshift(6,5);
+    console.log('c3:',c3);
+    console.log('c5:',c5); // [6, 5, 1, 2, 2, 3, 8]
+
+    /*
+      shift 删除数组下标为0的元素
+      返回被删除的元素
+      原数组会改变
+    */
+    var c6 = c3.shift();
+    console.log('c3:',c3); // [5, 1, 2, 2, 3, 8]
+    console.log('c6:',c6);
+
+    /*
+      slice(start)从数组下标为start开始截取数组一直到最后
+      slice(start,end)从数组下标为start开始截取一直到end之前（不包含end）
+      返回的是新数组
+      原数组不会改变
+    */
+    var c7 = c3.slice(2);
+    console.log('c3:',c3); // [5, 1, 2, 2, 3, 8]
+    console.log('c7:',c7); // [ 2, 2, 3, 8]
+
+    var c8 = c3.slice(2,4);
+    console.log('c3:',c3); // [5, 1, 2, 2, 3, 8]
+    console.log('c8:',c8); // [ 2, 2]
+
+    /*
+      splice(index, howmany) 
+        从数组下标为index开始删除howmany个元素
+        返回一个新的数组（被删除的元素组成的数组）
+        原数组会改变
+
+      splice(index, howmany, x1,x2,....)
+        从数组下标为index开始删除howmany个元素，并在在删除的位置插入x1,x2...
+        返回的是一个新数组（被删除的元素组成的数组）
+        原数组会改变
+    */
+    var c9 = c3.splice(1,2); // [5, 1, 2, 2, 3, 8]
+    console.log('c3:',c3);
+    console.log('c9:',c9);
+
+    var d1 = [1,2,3,4,5];
+    var d2 = d1.splice(1,2,8,9,10);
+    console.log('d1:',d1);
+    console.log('d2:',d2);
+
+    /*
+      sort(fn) 对数组进行排序，参数是一个函数名可以进行升序或降序排列，如果不传参数默认按字典序排列
+      返回排序后的数组
+      原数组会改变
+    */
+    function sortNumber(a,b){
+      // return a - b; // 升序排列
+      return b - a; // 降序排列
+    }
+
+    var d3 = [2,0,8,12,1,34,3,9];
+    var d4 = d3.sort(sortNumber);
+    // console.log('d3:',d3);
+    // console.log('d4:',d4);
+
+    var d5 = d3.sort();
+    console.log('d3:',d3);
+    console.log('d5:',d5);
+
+    var list = [4,2,15,7,3];
+    for(var i=0; i<list.length; i++) {
+      console.log(list[i]);
+    }
+
+  </script>
+</body>
+</html>

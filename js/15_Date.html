@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var date = new Date();
+    // getDate 获取某个月中的第几天
+    console.log(date.getDate());
+    // getMonth 获取月份（0～11）
+    console.log(date.getMonth());
+    // getFullYear 获取年份
+    console.log(date.getFullYear());
+    // getDay 返回一周中的某一天（0～6 从周日开始计算）
+    console.log(date.getDay());
+    // getTime 1970年1月1日至今的毫秒数
+    console.log(date.getTime());
+
+
+    var d = new Date();
+    var year = d.getFullYear();
+    var month = d.getMonth();
+    var _date = d.getDate();
+    var day = d.getDay();
+
+    var _day = day == 0 ? '日' : day;
+
+    var str = '你好，今天是'+year+'年'+(month+1)+'月'+_date+'日，星期'+_day;
+    document.write(str);
+    
+
+
+  </script>
+</body>
+</html>
