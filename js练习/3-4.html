@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <tile>Document</tile>
+    <style>
+        #wrapper {
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            position: relative;
+        }
+        
+        #inner {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -100px;
+            margin-left: -100px;
+        }
+        
+        #container {
+            width: 200px;
+            height: 200px;
+            text-align: center;
+            line-height: 200px;
+            border: solid 1px;
+        }
+        
+        #content {
+            width: 100%;
+            height: 400px;
+            background: aqua;
+            overflow: hidden;
+        }
+        
+        #main {
+            width: 100px;
+            height: 100px;
+            margin: 150px auto;
+            background: yellowgreen;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 4. 元素⽔平垂直都居中的方式(块级元素、行级元素) -->
+    <!-- 块级元素 方法一 -->
+    <id="wrapper">
+        <div id="inner"></div>
+        </div>
+        <!-- 块级元素 方法二 -->
+        <div id="content">
+            <div id="main"></div>
+        </div>
+
+        <!-- 行级元素 -->
+        <div id="container">
+            <span>hello</span>
+        </div>
+</body>
+
+</html>

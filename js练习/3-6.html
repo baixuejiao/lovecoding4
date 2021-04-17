@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        #wrapper {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 20px;
+            background: red;
+        }
+        
+        #content {
+            width: 200px;
+            height: 200px;
+            margin-top: 30px;
+            background: aqua;
+        }
+        
+        #container {
+            /* float: left; */
+            width: 400px;
+            height: 400px;
+            margin-top: 20px;
+            background: red;
+            /* border: 1px solid blue; */
+            /* overflow: hidden; */
+            position: absolute;
+        }
+        
+        #inner {
+            /* float: left; */
+            width: 150px;
+            height: 150px;
+            margin-top: 30px;
+            background: pink;
+            /* position: absolute; */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    6. 什么是外边距合并?写出所有你知道的外边距合并解决⽅式?
+        元素在同意方向上设置外边距会合并 
+        1）兄弟元素（并列的）只给一个元素加外边距
+        2) 父子元素（嵌套关系）
+            给父元素加溢出隐藏 overflow: hidden;
+            给父元素加边框
+            给父元素或子元素加浮动
+            给父元素或子元素加绝对定位
+   -->
+    <!-- <div id="wrapper"></div>
+  <div id="content"></div> -->
+
+    <div id="container">
+        <div id="inner"></div>
+    </div>
+</body>
+
+</html>

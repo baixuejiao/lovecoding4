@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #container {
+            width: 100%;
+            /* height: 100px; */
+            background: bisque;
+            /* overflow: hidden; */
+        }
+        /* #container::after { k
+            content: '';
+            display: block;
+            clear: both;
+        } */
+        
+        #inner {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background: aqua;
+        }
+        
+        #lastChild {
+            clear: both;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+      7. 元素浮动有哪些缺陷，怎么解决?
+        元素浮动会造成父元素塌陷
+          1）给父元素设置高度
+          2）创建一个伪元素并清除浮动
+          3）给父元素加溢出隐藏
+          4）在父元素内的最后加一个空的子元素并设置清除浮动
+     -->
+    <div id="container">
+        <div id="inner"></div>
+        <div id="lastChild"></div>
+    </div>
+
+</body>
+
+</html>

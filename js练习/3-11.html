@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+      var x = 1, y = 0, z = 0; // 全局变量 1 0 0
+      // function add(x) { // x是形参
+      //   return x = x + 1;
+      // }
+      y = add(x); // 全局变量1 
+      function add(x) {
+        return x = x + 3
+      }
+      z = add(x) //  x= 1
+      console.log(x, y, z) // 1 4 4 
+
+
+      // function fun() {
+      //   console.log(123)
+      // }
+
+      // fun()
+
+      // function fun() {
+      //   console.log(456)
+      // }
+
+  </script>
+</body>
+</html>
