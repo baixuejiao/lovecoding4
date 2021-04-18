@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>19</title>
+</head>
+<body>
+  <!-- 
+    如果某年的年份值是4的倍数并且不是100的倍数，
+    或者该年年份值是400的倍数，那么这一年年就是闰年。
+    请编制⼀个⻚面，该⻚面显示当天是否处于闰年。 
+  -->
+    <script>
+        var date=new Date;
+        var year=date.getFullYear();
+        document.write('这一天是'+a+'年 ');
+        if(year%4==0&&year%100!=0||year%400==0){
+            document.write('这一天是闰年');
+        }
+        else {
+            document.write('这一天不是闰年');
+        }
+    </script>
+</body>
+</html>

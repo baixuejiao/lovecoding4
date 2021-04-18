@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script type="text/javascript" language="javascript">
+    function chooseDay(textbox) {
+      var day = textbox.value;
+      switch (day) {
+        case '0': 
+          alert(" 您选择了星期日"); 
+          break; 
+        case '1': 
+          alert("您选择了星期一");  
+          break; 
+        case '2': 
+          alert("您选择了星期二"); 
+          break; 
+        case '3':
+          alert("您选择了星期三"); 
+          break; 
+        case '4': 
+          alert("您选择了星期四"); 
+          break; 
+        case '5': 
+          alert("您选择了星期五"); 
+          break; 
+        case '6': 
+          alert("您选择了星期六"); 
+          break; 
+        default: 
+          alert("您的输入有误"); 
+          break;
+      }
+    } 
+    //清除提示框的默认值 
+    function clearText(textbox) {
+      textbox.focus(); 
+    }
+    if (textbox.value == textbox.defaultValue) { 
+      textbox.value = ""; 
+    } 
+    </script>
+</head>
+<body>
+  <!-- 编写程序，根据用户输⼊的一个数字(0~6).通过警示对话框显示对应的星期几(0: 星期日; 1: 星期⼀一;......6: 星期六;) -->
+    <div name="myform">
+        <input type="text" name="mytext" onmouseover="clearText(this)" onkeyup="chooseDay(this)" value="请输入数字（0~6）">
+    </div>
+</body>
+</html>
