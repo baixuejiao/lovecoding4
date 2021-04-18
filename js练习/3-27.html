@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>29</title>
+</head>
+
+<body>
+  <!-- 
+    在⻚面上编程输出100~1000之间的所有素数，并要求每⾏显示6个素数
+    素数：只能被1和本身整除
+   -->
+  <script>
+    var index = 1;
+    for (var x = 100; x < 1001; x++) {
+      // 从2开始判断是否能被整除，如果能被整除就不是素数跳出循环
+      for (var i = 2; i < x; i++) {
+        if (x % i == 0)
+          break;
+      }
+      if (i >= x) {
+        document.write(x + ' ');
+        index = index + 1;
+      }
+      // index 计算每行输出6个
+      if (index == 7) {
+        document.write('</br>');
+        index = 1;
+      }
+    }
+    document.write('-------------------')
+    // 获取0～100之间的素数
+    for(var i = 0 ; i<=100 ; i++){
+      //取出0～10之间的素数 只要不能整除就是素数
+        if(i%2!=0 && i%3!=0 && i%5!=0 && i%7!=0){
+            document.write(i+' ');
+        }
+    }
+  </script>
+</body>
+
+</html>

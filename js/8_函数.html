@@ -21,12 +21,17 @@
     }
     // 调用函数
     fun();
+    var tmp;
+    console.log(tmp) // undefined
+    tmp = 123
+
 
     // 函数表达式的方式 只能在函数定义之后调用
+    //fn(); // fn is not a function
     var fn = function(){
       console.log('hi~');
     }
-    // 调用表函数
+    // 调用函数
     fn();
 
     // 形参

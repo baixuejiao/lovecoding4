@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 递归
+        // function fun(n){
+        //   if (n==1 || n==2) {
+        //     return 1;
+        //   } else {
+        //     return fun(n-1)+fun(n-2);
+        //   }
+        // }
+        // for(var i=1; i<=10; i++) {
+        //   console.log(fun(i));
+        // }
+        // 非递归 方法一
+        // function mmm(n) {
+        //     // 第一项
+        //     var result1, result2, a, b;
+        //     for (var i = 1; i <= n; i++) {
+        //       if (i == 1) {
+        //         result1 = 1;
+        //         continue;
+        //       }
+        //       if (i == 2) {
+        //         result2 = 1;
+        //         continue;
+        //       }
+        //       // 前一项存a，前两项存b               
+        //       a = result1; // a = 1  1
+        //       b = result2; // b = 1  2
+        //       result2 = a + b; // result2 = 2 3
+        //       result1 = b; // 1 2
+        //     }
+        //     return result2;
+        //   }
+        // console.log(mmm(10)) ;
+
+        // 非递归方法二
+        var input = prompt();
+        var n = parseInt(input);
+        var all = new Array(n);
+        all[0] = 1;
+        all[1] = 1;
+        for (var i = 0; i < n; i++) {
+          // i= 0
+          all[i] = parseInt(all[i]);
+          // all[0] = 1
+          all[i + 1] = parseInt(all[i + 1]);
+          // all[1] = 1
+          all[i + 2] = all[i + 1] + all[i];
+          // all[2] = all[1]+all[0] = 2
+        }
+        document.write('递增：' + all[n - 1]);
+        document.write('</br>');
+        function fun1(n) {
+          if (n <= 0) {
+            return 0;
+          }
+          if (n == 1 || n == 2) {
+            return 1;
+          }
+          return fun1(n - 2) + fun1(n - 1);
+        }
+        document.write('递归：' + fun1(n));
+    </script>
+</head>
+<body>
+    <!-- 斐波纳契(Fibonacci)数列列的
+      第⼀项是1，第⼆项是1，
+      以后各项都是前两项的和。
+      试⽤用递归函数和⾮非递归函数各编写 ⼀一个程序，
+      求斐波纳契数列列第N项的值 -->
+</body>
+</html>
