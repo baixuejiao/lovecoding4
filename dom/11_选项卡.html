@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #container{
+      width: 300px;
+      height: 400px;
+      margin: 50px auto 0;
+    }
+    #menu li{
+      float: left;
+      width: 100px;
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      list-style: none;
+      color: #ff8907;
+      background: #fff;
+      cursor: pointer;
+    }
+    #menu .active{
+      color: #fff;
+      background: #ff8907;
+    }
+    #main{
+      width: 300px;
+      height: 350px;
+    }
+
+    #main div{
+      display: none;
+      width: 100%;
+      height: 100%;
+    }
+    #main .show{
+      display: block;
+      color: #fff;
+      background: #ff8907;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <ul id="menu">
+      <li class="active">菜单一</li>
+      <li>菜单二</li>
+      <li>菜单三</li>
+    </ul>
+    <div id="main">
+      <div class="show">内容1</div>
+      <div>内容2</div>
+      <div>内容3</div>
+    </div>
+  </div>
+
+  <script>
+    // 1.获取ul元素 返回一个dom对象
+    var oMenu = document.getElementById('menu');
+    // 2.获取ul中的li元素 返回一个html集合
+    var aLi = oMenu.getElementsByTagName('li');
+    console.log(aLi)
+
+    // 获取div
+    var oMain = document.getElementById('main');
+    var aDiv = oMain.getElementsByTagName('div');
+    
+    // 3.给li绑定事件
+    for(var i=0; i<aLi.length; i++) { // 页面加载完成后 for循环已经执行完成 当i=3跳出循环 此时i=3
+
+      // 循环获取每一个li 绑定点击事件
+      aLi[i].index = i // 给每一个li添加一个自定义的属性 index表示当前的索引
+      
+      aLi[i].onclick = function() {
+        // this -> 给谁绑定的事件谁就是this 
+        console.log(i)// i=3  用户点击时才会触发（页面已经加载完成 i=3）
+        // 循环给每一个li取消class
+        for(var j=0; j<aLi.length;j++) {
+          aLi[j].className = ''
+          aDiv[j].className = ''
+        }
+        // aLi[i] i=3
+        
+        // 给当前点击的这个元素加class this.index 可以拿到当前点击元素的index属性（设置的索引）
+        aLi[this.index].className = 'active'
+        aDiv[this.index].className = 'show'
+      }
+      // aLi[3]
+    }
+
+
+  </script>
+</body>
+</html>

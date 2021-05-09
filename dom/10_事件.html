@@ -34,17 +34,30 @@
     var oDiv = document.getElementsByTagName('div')[0];
 
     // 鼠标单击事件
-    // oDiv.onclick = function(){
-    //   // alert('onclick')
-    //   /*
-    //     oDiv.innerText 获取元素内的文本信息
-    //     oDiv.innerHTML 获取元素内的html内容
-    //   */
-    //   // console.log(oDiv.innerText)
-    //   // console.log(oDiv.innerHTML)
-    //   oDiv.innerText = '<h1>hi~</h1>'
-    //   oDiv.innerHTML = '<h1>hi~</h1>'
-    // }
+    // function => 事件处理函数
+    /*
+       事件 事件处理函数
+       事件源: 谁触发了这个事件，谁就是事件源
+       this：给谁绑定的事件谁就是this
+    */
+    oDiv.onclick = function(event){
+      console.log(this)
+      /*
+        event 事件对象
+          event.clientX
+          event.clientY 鼠标点击时的坐标值
+      */
+      console.log(event)
+      // alert('onclick')
+      /*
+        oDiv.innerText 获取元素内的文本信息
+        oDiv.innerHTML 获取元素内的html内容
+      */
+      // console.log(oDiv.innerText)
+      // console.log(oDiv.innerHTML)
+      oDiv.innerText = '<h1>hi~</h1>'
+      oDiv.innerHTML = '<h1>hi~</h1>'
+    }
 
     /*
       ondblclick 鼠标双击事件
@@ -93,28 +106,28 @@
     /*
       onfocus获取焦点
     */
-    var oInput = document.getElementById('text')
-    oInput.onfocus = function(){
-      // oInput.style.background = 'pink'
-      oInput.className = 'active'
-    }
+    // var oInput = document.getElementById('text')
+    // oInput.onfocus = function(){
+    //   // oInput.style.background = 'pink'
+    //   oInput.className = 'active'
+    // }
 
     /*
       onblur 失去焦点
     */
-    oInput.onblur = function(){
-      // oInput.style.background = 'white'
-      oInput.className = ''
-    }
+    // oInput.onblur = function(){
+    //   // oInput.style.background = 'white'
+    //   oInput.className = ''
+    // }
 
 
-    var oSel = document.getElementsByTagName('select')[0]
-    /*
-      onchange 内容改变时触发的事件
-    */
-    oSel.onchange = function(){
-      console.log(123456)
-    }
+    // var oSel = document.getElementsByTagName('select')[0]
+    // /*
+    //   onchange 内容改变时触发的事件
+    // */
+    // oSel.onchange = function(){
+    //   console.log(123456)
+    // }
 
 
 
