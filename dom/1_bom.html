@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    body{
+      height: 4000px;
+    }
+
+    #gotop{
+      width: 100px;
+      height: 100px;
+      color: #fff;
+      background: red;
+      position: fixed;
+      right: 10px;
+      bottom: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>dom & bom</h1>
+  <div id="gotop">回到顶部</div>
+  <div id="link">进入百度</div>
+  <script>
+    var person = {
+      name: 'zs',
+      age: 18,
+      eat: function() {
+        console.log('eating...')
+      }
+    }
+
+    // window 对象 提供了一系列的方法
+    // 全局的变量 和方法 都会挂载到window对象下
+    var a = 123;
+    var afun = function(){
+      console.log('hello')
+    }
+
+    // 获取元素
+    var oDiv = document.getElementById('gotop');
+    // 绑定点击事件
+    oDiv.onclick = function() {
+      /* 
+        scrollTo(x, y)
+        滚动条滚动到某一位置
+        x，y代表移动到某一坐标点
+      */
+      // scrollTo(0,100)
+      /*
+        scrollBy(X,Y)
+        滚动条滚动了多少距离（相对于当前位置进行改变）
+        x，y代表移动的距离
+      */
+      scrollBy(0, -300)
+    }
+
+    var oLink = document.getElementById('link')
+    oLink.onclick = function() {
+      /*
+        open(url)
+        打开一个新页面
+        url表示打开页面的连接
+      */
+      open('https://www.baidu.com')
+    }
+
+    // 警示框
+    alert('hello')
+
+    /* 
+      prompt(text, value) 返回类型是字符串
+      text: 提示的文案
+      value：默认值
+    */
+    var str = prompt('请输入年份','1998');
+    console.log(str)
+
+    /*
+      confirm 确认框
+      返回值是布尔类型 true/false
+    */
+    var tmp = confirm('hello world')
+    console.log(tmp)
+
+   
+
+
+  </script>
+</body>
+</html>

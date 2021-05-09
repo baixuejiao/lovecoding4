@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>location</h1>
+  <p>http://127.0.0.1:5500/dom/8_location.html?channe=123&verson=123#a=123</p>
+  <script>
+    console.log('1111')
+    // setTimeout(function(){
+    //   // 重新加载当前页面
+    //   location.reload();
+    // },3000)
+
+    // setTimeout(function(){
+    //   // 覆盖当前页面（页面跳转时不产生新的历史记录，用户不可以后退）
+    //   location.replace('https://www.baidu.com')
+    // }, 2000)
+
+    setTimeout(function(){
+      /* 
+        location.href
+        获取页面完整的URL
+        也可以设置页面的URL（进行页面跳转）
+      */
+      location.href = 'https://www.baidu.com'
+    }, 2000)
+
+  
+
+  </script>
+</body>
+</html>

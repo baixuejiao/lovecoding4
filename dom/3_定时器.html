@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // setTimeout(function(){
+    //   console.log(1)
+    // },3000)
+    // setTimeout(function(){
+    //   console.log(2)
+    // },1000)
+    // console.log(3)
+
+    setTimeout(function(){
+      console.log(1)
+    },0)
+    setTimeout(function(){
+      console.log(2)
+    },1000)
+    console.log(3)
+
+    /* 
+      js是单线程的 同一时间只能做一件事情
+      代码按照顺序执行 setTimeout属于一个异步操作
+      遇到异步操作 会先放入任务队列中
+      然后执行主线程的代码
+      然后将任务队列中的任务取出
+      等待时间间隔结束后执行
+    */
+  </script>
+</body>
+</html>

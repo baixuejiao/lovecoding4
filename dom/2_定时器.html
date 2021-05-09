@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+
+    /*
+      setTimeout(fn, time)
+      几秒之后执行,返回一个number类型的值可以理解为表示当前页面中第几个定时器
+      只执行一次
+      fn（函数） 具体执行的内容
+      time 时间间隔（毫秒为单位）
+
+    */
+    // var timer = setTimeout(function(){
+    //   console.log(1)
+    // },3000)
+    // console.log('timer:',timer)
+
+    // var timer2 = setTimeout(function(){
+    //   console.log(2)
+    // },1000)
+    // console.log('timer2:',timer2)
+    /*
+      clearTimeout(timer)
+      清除定时器 => setTimeout
+    */
+    // clearTimeout(timer)
+
+    /*
+      setInterval(fn, time)
+      每隔几秒执行一次,返回一个number类型的值可以理解为表示当前页面中第几个定时器
+      执行多次
+      fn（函数） 具体执行的内容
+      time 时间间隔（毫秒为单位）
+    */
+    // setInterval(function(){
+    //   console.log(1)
+    // }, 1000)
+
+    /*
+      clearInterval(timer)
+      清除定时器 => setInterval
+    */
+    var tmp = 6;
+    var timer3 = setInterval(function(){
+      console.log(tmp)
+      tmp--
+      if (tmp == 0) {
+        clearInterval(timer3)
+      }
+    },1000)
+    
+
+
+  </script>
+</body>
+</html>
