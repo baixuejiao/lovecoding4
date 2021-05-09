@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  div{
+    width: 200px;
+    height: 200px;
+    margin: 50px auto;
+    background: aqua;
+  }
+  .active{
+    background: pink;
+  }
+
+  </style>
+</head>
+<body>
+  <select>
+    <option value="">哈尔滨</option>
+    <option value="">齐齐哈尔</option>
+    <option value="">牡丹江</option>
+  </select>
+  <div>
+    <p>hello world</p>
+    <input id="text" type="text">
+  </div>
+
+  
+  <script>
+    var oDiv = document.getElementsByTagName('div')[0];
+
+    // 鼠标单击事件
+    // oDiv.onclick = function(){
+    //   // alert('onclick')
+    //   /*
+    //     oDiv.innerText 获取元素内的文本信息
+    //     oDiv.innerHTML 获取元素内的html内容
+    //   */
+    //   // console.log(oDiv.innerText)
+    //   // console.log(oDiv.innerHTML)
+    //   oDiv.innerText = '<h1>hi~</h1>'
+    //   oDiv.innerHTML = '<h1>hi~</h1>'
+    // }
+
+    /*
+      ondblclick 鼠标双击事件
+    */
+    // oDiv.ondblclick = function(){
+    //   alert("双击！")
+    // }
+
+    /*
+      onmouseover 鼠标划入事件
+    */
+
+    // oDiv.onmouseover = function(){
+    //   console.log('鼠标划入')
+    // }
+
+    /*
+      onmouseout 鼠标划出事件
+    */
+    // oDiv.onmouseout = function(){
+    //   console.log('鼠标划出')
+    // }
+
+    /*
+      onmousedown 鼠标按下事件
+    */
+    // oDiv.onmousedown = function(){
+    //   console.log('鼠标按下')
+    // }
+
+    /*
+      onmouseup 鼠标抬起事件
+    */
+    // oDiv.onmouseup = function(){
+    //   console.log('鼠标抬起')
+    // }
+
+    /*
+      鼠标移动事件
+    */
+    // oDiv.onmousemove = function(){
+    //   console.log('鼠标移动')
+    // }
+
+
+    /*
+      onfocus获取焦点
+    */
+    var oInput = document.getElementById('text')
+    oInput.onfocus = function(){
+      // oInput.style.background = 'pink'
+      oInput.className = 'active'
+    }
+
+    /*
+      onblur 失去焦点
+    */
+    oInput.onblur = function(){
+      // oInput.style.background = 'white'
+      oInput.className = ''
+    }
+
+
+    var oSel = document.getElementsByTagName('select')[0]
+    /*
+      onchange 内容改变时触发的事件
+    */
+    oSel.onchange = function(){
+      console.log(123456)
+    }
+
+
+
+  </script>
+</body>
+</html>

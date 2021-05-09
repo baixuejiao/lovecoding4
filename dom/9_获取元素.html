@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .active{
+      width: 200px;
+      height: 200px;
+      background: aqua;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="text">hello world</div>
+  <div>1234</div>
+
+  <ul id="menu">
+    <li class="list">1</li>
+    <li class="list">2</li>
+    <li class="list">3</li>
+  </ul>
+
+  <div id="wrapper">
+    <ul>
+      <li class="list">11</li>
+      <li class="list">22</li>
+      <li class="list">33</li>
+      <li class="list">44</li>
+    </ul>  
+  </div>
+
+  <div class="container">213</div>
+
+  <script>
+    // getElementById 根据ID获取元素
+    var oDiv = document.getElementById('text');
+    console.log(oDiv)
+
+    /*
+      oDiv.style 设置元素的样式(设置的是内联样式)
+        oDiv.style.color
+        样式中 带有连接符的需要换成驼峰式书写 eg： font-size => fontSize background-color => backgroundColor
+    */
+    oDiv.style.color = 'red';
+    oDiv.style.fontSize = '40px';
+    oDiv.style.backgroundColor = 'pink';  
+
+
+    /*
+      getElementsByTagName 根据标签名查找元素
+      返回所有满足条件的元素 返回一个html集合 是一个类数组
+      类数组只有length属性表示长度，不是真正的数组，没有数组自带的方法
+      可以通过索引找到具体某一个元素
+    */
+    var aDiv = document.getElementsByTagName('div');
+    console.log(aDiv)
+
+    /*
+      oDiv.className 设置元素的class
+      （不能直接写class因为在js里class是关键字是es6中的类）
+    */
+    aDiv[1].className = 'active'
+
+    /*
+      getElementsByClassName
+      通过class获取元素 返回一个html集合，是类数组
+    */
+    var aLi = document.getElementsByClassName('list')
+    console.log(aLi)
+
+    var oWrapper = document.getElementById('wrapper')
+    var aList = oWrapper.getElementsByClassName('list')
+    console.log(aList)
+
+    /*
+      获取元素的方法 会把所有满足条件的元素都获取到
+      dom对象下也是可以支持getElementById、getElementsByClassName、getElementsByTagName 方法
+    */
+
+    /*
+      如果返回的是类数组（html集合）必须通过索引来获取具体的dom元素
+     */
+    var oCon = document.getElementsByClassName('container')[0]
+    console.log(oCon)
+  </script>
+</body>
+</html>
