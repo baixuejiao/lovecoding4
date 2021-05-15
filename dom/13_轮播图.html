@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      height: 2000px;
+    }
+
+    #container {
+      width: 600px;
+      height: 400px;
+      margin: 100px auto 0;
+      position: relative;
+    }
+
+    #swiper {
+      width: 600px;
+      height: 400px;
+    }
+
+    #swiper>img {
+      display: none;
+      width: 100%;
+    }
+
+    #swiper>.active {
+      display: block;
+    }
+
+    #pointer {
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+    }
+
+    #pointer>li {
+      float: left;
+      list-style: none;
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      text-align: center;
+      line-height: 25px;
+      /* 给元素整体改变透明度 */
+      /* opacity: 0.6; */
+      color: #fff;
+      /* 单独给背景修改透明度 */
+      background: rgba(0, 0, 0, 0.6);
+      cursor: pointer;
+    }
+
+    #pointer>.select {
+      color: #fff;
+      background: red;
+    }
+
+    #left {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      cursor: pointer;
+    }
+
+    #left::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-left: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      /* 
+        transform css3 变换属性 
+        rotate 旋转
+      */
+      transform: rotate(45deg);
+      position: absolute;
+      top: 12px;
+      left: 12px;
+    }
+
+    #right {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      background: rgba(0, 0, 0, 0.6);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      cursor: pointer;
+    }
+
+    #right::after {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-right: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container">
+    <div id="swiper">
+      <img class="active" src="./imgs/1.jpg" alt="">
+      <img src="./imgs/2.jpg" alt="">
+      <img src="./imgs/3.jpg" alt="">
+      <img src="./imgs/4.jpg" alt="">
+      <img src="./imgs/5.jpg" alt="">
+      <img src="./imgs/6.jpg" alt="">
+    </div>
+
+    <ul id="pointer">
+      <li class="select">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+
+    <span id="left"></span>
+    <span id="right"></span>
+
+  </div>
+
+  <script>
+    // 1.获取元素
+    var oUl = document.getElementById('pointer')
+    var aLi = oUl.getElementsByTagName('li')
+
+    var oSwiper = document.getElementById('swiper')
+    var aImg = oSwiper.getElementsByTagName('img')
+
+    var oRight = document.getElementById('right')
+    var oLeft = document.getElementById('left')
+
+    var oCon = document.getElementById('container')
+
+    var tag = 0 // 表示当前展示的图片的索引
+
+    var timer = null // 表示定时器
+
+    // 6.封装统一方法 优化代码
+    function chanSlider() {
+      // 给所有的li取消样式 给所有的img取消样式
+      for (var i = 0; i < aLi.length; i++) {
+        aLi[i].className = ''
+        aImg[i].className = ''
+      }
+
+      // 找到当前索引对应的元素展示出来
+      aLi[tag].className = 'select'
+      aImg[tag].className = 'active'
+    }
+
+    // 10.封装开启定时器的方法
+    function goTimer() {
+      timer = setInterval(function () {
+        tag++
+        if (tag === aLi.length) {
+          tag = 0
+        }
+        chanSlider()
+      }, 500)
+    }
+
+    // 2.给Li绑定点击事件
+    for (var i = 0; i < aLi.length; i++) {
+      // 给每一个Li增加一个自定义的属性表示当前的索引
+      aLi[i].index = i
+
+      // 绑定点击事件
+      aLi[i].onclick = function () {
+
+        // 3.给所有的li取消样式 给所有的img取消样式
+        // for(var j=0; j<aLi.length; j++) {
+        //   aLi[j].className = ''
+        //   aImg[j].className = ''
+        // }
+
+        // 通过this.index 找到当前点击元素的索引 并找到当前元素 添加样式
+        // aLi[this.index].className = 'select'
+        // aImg[this.index].className = 'active'
+
+        // 单独点击li时同步一下tag索引
+        tag = this.index
+
+        chanSlider()
+      }
+    }
+
+    // 4.给右按钮绑定点击事件
+    oRight.onclick = function () {
+      // 修改索引
+      tag++
+      if (tag === aLi.length) {
+        tag = 0
+      }
+
+      // 先让所有的li和img取消样式
+      // for(var i=0;i<aLi.length;i++) {
+      //   aLi[i].className = ''
+      //   aImg[i].className = ''
+      // }
+
+      // 找到当前索引对应的元素展示出来
+      // aLi[tag].className = 'select'
+      // aImg[tag].className = 'active'
+
+      chanSlider()
+
+    }
+
+    // 5.给左按钮绑定点击事件
+    oLeft.onclick = function () {
+      // 修改索引
+      tag--
+
+      if (tag < 0) {
+        tag = aLi.length - 1
+      }
+
+      // 先让所有的li和img取消样式
+      // for(var i=0; i<aLi.length; i++) {
+      //   aLi[i].className = ''
+      //   aImg[i].className = ''
+      // }
+
+      // 找到当前索引对应的元素展示出来
+      // aLi[tag].className = 'select'
+      // aImg[tag].className = 'active'
+
+      chanSlider()
+    }
+
+
+    // 7.开启定时器 自动播放（其实时自动点击向右按钮）
+    // var timer = setInterval(function(){
+    //   tag++
+    //   if(tag === aLi.length) {
+    //     tag = 0
+    //   }
+    //   chanSlider()
+    // },500)
+    goTimer()
+
+
+
+    // 8.鼠标划入时清除定时器
+    oCon.onmouseover = function () {
+      clearInterval(timer)
+    }
+
+    // 9.鼠标划出时开启定时器
+    oCon.onmouseout = function () {
+      goTimer()
+    }
+
+  </script>
+</body>
+
+</html>

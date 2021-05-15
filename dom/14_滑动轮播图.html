@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+
+    #container{
+      width: 600px;
+      height: 400px;
+      margin: 50px auto 0;
+      overflow: hidden;
+      position: relative;
+    }
+
+    #swiper{
+      width: 3600px;
+      height: 400px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      /* 
+        过渡效果
+        left：表示需要让left属性产生过渡的效果
+        1s:表示效果的执行时间1s
+        ease:表示平滑过渡
+       */
+      transition: left 1s ease;
+    }
+
+    #swiper > img{
+      float: left;
+    }
+
+    #pointer{
+      position: absolute;
+      right: 0;
+      bottom: 30px;
+    }
+
+    #pointer > li {
+      float: left;
+      width: 25px;
+      height: 25px;
+      margin: 0 5px;
+      text-align: center;
+      line-height: 25px;
+      list-style: none;
+      color: #fff;
+      background: rgba(0,0,0,0.6);
+    }
+
+    #pointer>.select{
+      background: red;
+    }
+
+    #left{
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      top: 50%;
+      left: 0;
+    }
+
+    #left::after{
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-left: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      transform: rotate(45deg);
+      position: absolute;
+      top: 12px;
+      left: 12px;
+    }
+
+    #right {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      margin-top: -25px;
+      background: rgba(0,0,0,0.6);
+      position: absolute;
+      right: 0;
+      top: 50%;
+    }
+
+    #right::after{
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      border-right: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      transform: rotate(-45deg);
+      position: absolute;
+      top: 12px;
+      right: 14px;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="swiper">
+      <img src="./imgs/1.jpg" alt="">
+      <img src="./imgs/2.jpg" alt="">
+      <img src="./imgs/3.jpg" alt="">
+      <img src="./imgs/4.jpg" alt="">
+      <img src="./imgs/5.jpg" alt="">
+      <img src="./imgs/6.jpg" alt="">
+    </div>
+
+    <ul id="pointer">
+      <li class="select">1</li>
+      <li>2</li>
+      <li>3</li>
+      <li>4</li>
+      <li>5</li>
+      <li>6</li>
+    </ul>
+
+    <span id="left"></span>
+    <span id="right"></span>
+
+    <script>
+      // 1.获取元素
+      var oUl = document.getElementById('pointer')
+      var aLi = oUl.getElementsByTagName('li')
+      var oSwiper = document.getElementById('swiper')
+      var oLeft = document.getElementById('left')
+      var oRight = document.getElementById('right')
+      var oCon = document.getElementById('container')
+
+      var tag = 0
+      var timer = null // 定义一个定时器
+
+      // 5.封装点击事件的方法
+      function changeSlider() {
+        // 循环给每一个li取消样式
+        for(var i=0; i<aLi.length; i++) {
+          aLi[i].className = ''
+        }
+
+        // 给被点击的li添加样式
+        aLi[tag].className = 'select'
+        // 给swiper修改left属性
+        oSwiper.style.left = -600 * tag + 'px'
+      }
+
+      // 9.封装定时器方法
+      function goTimer() {
+        timer = setInterval(function(){
+          // 每点击一次 索引加一
+          tag++
+
+          if(tag === aLi.length) {
+            tag = 0
+          }
+
+          changeSlider()
+        },1000)
+      }
+
+
+      // 2.循环li绑定事件
+      for(var i=0; i<aLi.length; i++) {
+        // 给每一个li增加自定义属性 表示当前对象的索引
+        aLi[i].index = i
+
+        //给li绑定点击事件
+        aLi[i].onclick = function(){
+          // this -> 指针对象 表示的是给谁绑定了事件谁就是this
+          console.log(i)
+
+          // 给所有li取消样式
+          for(var j=0; j<aLi.length; j++){
+            aLi[j].className = ''
+          }
+         
+          // 给点击的li加上样式
+          aLi[this.index].className = 'select'
+          // 修改swiper的left属性
+          oSwiper.style.left = -600 * this.index + 'px'
+
+          // 同步对应的索引给tag
+          tag = this.index
+
+          changeSlider()
+        } 
+      }
+
+      // 3.给向右按钮绑定点击事件
+      oRight.onclick = function() {
+        // 每点击一次 索引加一
+        tag++
+
+        if(tag === aLi.length) {
+          tag = 0
+        }
+
+        // 循环给每一个li取消样式
+        // for(var i=0; i<aLi.length; i++) {
+        //   aLi[i].className = ''
+        // }
+
+        // 给被点击的li添加样式
+        // aLi[tag].className = 'select'
+
+        // oSwiper.style.left = -600 * tag + 'px'
+
+        changeSlider()
+      }
+
+      // 4.给向左的按钮绑定点击事件
+      oLeft.onclick = function() {
+        // 每点击一次 索引减一
+        tag--
+
+        if(tag < 0){
+          tag = aLi.length - 1
+        }
+        
+        // 循环给每一个li取消样式
+        // for(var i=0; i<aLi.length; i++) {
+        //   aLi[i].className = ''
+        // }
+        
+        // 给被点击的li添加样式
+        // aLi[tag].className = 'select'
+
+        // oSwiper.style.left = -600 * tag + 'px'
+
+        changeSlider()
+      }
+
+      // 6.设置定时器 间隔1s执行一次
+      // var timer = setInterval(function(){
+      //   // 每点击一次 索引加一
+      //   tag++
+
+      //   if(tag === aLi.length) {
+      //     tag = 0
+      //   }
+
+      //   changeSlider()
+      // },1000)
+      goTimer()
+
+      // 7.当鼠标划入时清除定时器
+      oCon.onmouseover = function() {
+        clearInterval(timer)
+      }
+
+      // 8.当鼠标划出时开启定时器
+      oCon.onmouseout = function() {
+        goTimer()
+      }
+
+    </script>
+  </div>
+</body>
+</html>
