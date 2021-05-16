@@ -30,15 +30,22 @@
     var oDiv = document.getElementsByTagName('div')[0]
 
     // 2.事件绑定
-    oDiv.onmousedown = function(){
+    oDiv.onmousedown = function(e){
+      // 计算鼠标点击时的位置距离div边界的位置（在移动过程中保持不变）
+      var x1 = e.clientX - oDiv.offsetLeft
+      var y1 = e.clientY - oDiv.offsetTop
+
       document.onmousemove = function(event) {
         // 鼠标移动时的坐标值
         var x = event.clientX
         var y = event.clientY
 
-        oDiv.style.left = x - oDiv.offsetWidth / 2 + 'px'
-        oDiv.style.top = y - oDiv.offsetHeight / 2 + 'px'
-      
+        // oDiv.style.left = x - oDiv.offsetWidth / 2 + 'px'
+        // oDiv.style.top = y - oDiv.offsetHeight / 2 + 'px'
+
+        oDiv.style.left = x - x1 + 'px'
+        oDiv.style.top = y - y1 + 'px'
+       
       }
     }
 

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    *{
+      margin: 0;
+      padding: 0;
+    }
+    #small{
+      float: left;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+    #small img{
+      width: 100%;
+      height: 100%;
+    }
+    #drag{
+      display: none;
+      width: 200px;
+      height: 200px;
+      background: #fff;
+      opacity: 0.6;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    #big{
+      float: left;
+      width: 400px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+    }
+    #big > img{
+      display: none;
+      width: 800px;
+      height: 800px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+
+  </style>
+</head>
+<body>
+  <div id="small">
+    <img src="./imgs/s.png" alt="">
+    <div id="drag"></div>
+  </div>
+  <div id="big">
+    <img src="./imgs/b.png" alt="">
+  </div>
+
+  <script>
+    // 获取元素
+    var oSmall = document.getElementById('small')
+    var oDrag = document.getElementById('drag')
+
+    var oBig = document.getElementById('big')
+    var oImg = oBig.getElementsByTagName('img')[0]
+
+    oSmall.onmouseover = function() {
+      oDrag.style.display = 'block'
+      oImg.style.display = 'block'
+
+      // 鼠标划入后移动
+      oSmall.onmousemove = function(event) {
+        oDrag.style.left = event.clientX - oDrag.offsetWidth / 2 + 'px'
+        oDrag.style.top = event.clientY - oDrag.offsetHeight / 2 + 'px'
+
+        // 白色正方形实际移动的距离
+        var moveY = oDrag.offsetTop
+        var moveX = oDrag.offsetLeft
+
+        // 白色正方形在y上可移动的最大距离
+        var maxHeight = oSmall.offsetHeight - oDrag.offsetHeight
+        var maxWidth = oSmall.offsetWidth - oDrag.offsetWidth
+
+        // 边界处理
+        if (moveY < 0 ) {
+          oDrag.style.top = 0
+        }
+        if (moveX < 0) {
+          oDrag.style.left = 0
+        }
+        if(moveY >= maxHeight) {
+          oDrag.style.top = maxHeight + 'px'
+        }
+        if(moveX >= maxWidth) {
+          oDrag.style.left = maxWidth + 'px'
+        }
+
+        // 大图片可移动的最大距离
+        var maxBigWidth = oImg.offsetWidth - oBig.offsetWidth
+        var maxBigHeight = oImg.offsetHeight - oBig.offsetHeight
+
+        // 白色正方形移动距离 / 白色最大移动距离 = 大图移动距离 / 大图最大移动距离
+        oImg.style.left = -oDrag.offsetLeft * maxBigWidth / maxWidth + 'px'
+        oImg.style.top = -oDrag.offsetTop * maxBigHeight / maxHeight + 'px'
+      }
+    }
+
+    oSmall.onmouseout = function() {
+      oDrag.style.display = 'none'
+      oImg.style.display = 'none'
+    }
+
+
+  </script>
+</body>
+</html>
