@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      padding: 10px;
+      border: 5px solid blue;
+      background: red;
+      position: absolute;
+      top: 50px;
+      left: 80px;
+    }
+  </style>
+</head>
+<body>
+  <div>123</div>
+
+  <script>
+    var oDiv = document.getElementsByTagName('div')[0]
+    
+    // oDiv.style.xxx 获取或设置元素的内联样式
+    // oDiv.style.width = '400px'
+    // console.log(oDiv.style.width)
+
+    /**
+     * clientWidth 获取元素的宽度 clientHeight
+     * clientWidth = width + padding 
+     * 返回一个number类型的值
+     */
+    var x = oDiv.clientWidth
+    console.log(x)
+
+    /**
+     *  offsetWidth 获取元素的宽度 offsetHeight
+     *  offsetWidth = width + padding + border
+     *  返回一个number类型的值
+     */
+    var x1 = oDiv.offsetWidth
+    console.log(x1)
+
+    // var top = oDiv.offsetTop
+
+    /**
+     *  offsetLeft获取元素的偏移位置
+     *  相对于已定位的祖先元素的偏移量
+     *  返回的是一个number类型的值
+     */
+    var left = oDiv.offsetLeft
+    console.log (left)
+
+    /**
+     * offsetTop获取元素的偏移位置
+     * 相对于已定位的祖先元素的偏移量
+     * 返回的是一个number类型的值
+     */ 
+    console.log(oDiv.offsetTop)
+
+
+  </script>
+</body>
+</html>
